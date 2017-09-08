@@ -31,7 +31,7 @@ public class IntroActivity extends MaterialIntroActivity {
             addSlide(new SlideFragmentBuilder()
                             .backgroundColor(R.color.first_slide_background)
                             .buttonsColor(R.color.first_slide_buttons)
-                            .image(R.drawable.ic_delivery_truck)
+                            .image(R.drawable.logowidth)
                             .title("TruckU")
                             .description("Optimizing the truck deliveries")
                             .build(),
