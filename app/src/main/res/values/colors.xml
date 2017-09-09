@@ -4,9 +4,19 @@
   <color name="primary">#fff</color>
   <!--IntroActivity-->
   <color name="first_slide_background">#0097A7</color>
-  <color name="first_slide_buttons">#FFFFFF</color>
+  <color name="first_slide_buttons">#000000</color>
   <color name="first_slide_accent">#0097A7</color>
-  <color name="first_slide_text">#757575</color>
+  <color name="first_slide_text">#000000</color>
+  <!--GeneratedSecondSlidePalette-->
+  <color name="secondprimary">#673AB7</color>
+  <color name="secondprimary_dark">#512DA8</color>
+  <color name="secondprimary_light">#D1C4E9</color>
+  <color name="secondaccent">#536DFE</color>
+  <color name="secondprimary_text">#212121</color>
+  <color name="secondsecondary_text">#757575</color>
+  <color name="secondicons">#FFFFFF</color>
+  <color name="seconddivider">#BDBDBD</color>
+
 
   <!--login -->
   <color name="primary_dark">#E12929</color>
