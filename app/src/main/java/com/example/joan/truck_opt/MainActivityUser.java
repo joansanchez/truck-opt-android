@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -31,12 +33,13 @@ import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 
-public class MainActivityUser extends ActionBarActivity {
+public class MainActivityUser extends ActionBarActivity implements View.OnClickListener {
     PacketListAdapter packetListAdapter;
     ListView packetList;
     SharedPreferences sp;
     private static final String TAG = "MainActivityUser";
     SharedPreferences.Editor editor;
+    Button btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +49,8 @@ public class MainActivityUser extends ActionBarActivity {
         packetListAdapter = new PacketListAdapter(this);
         sp = getSharedPreferences("APP2", Context.MODE_PRIVATE);
         editor = sp.edit();
+        btn = (Button) findViewById(R.id.addone);
+        btn.setOnClickListener(this);
         testData();
     }
     private void testData(){
@@ -118,5 +123,15 @@ public class MainActivityUser extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.addone:
+                Intent i = new Intent(this, DeliveryDetails.class);
+                startActivity(i);
+                break;
+        }
     }
 }
