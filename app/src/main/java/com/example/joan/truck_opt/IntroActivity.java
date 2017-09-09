@@ -52,7 +52,7 @@ public class IntroActivity extends MaterialIntroActivity {
             addSlide(new SlideFragmentBuilder()
                             .backgroundColor(R.color.first_slide_background)
                             .buttonsColor(R.color.first_slide_buttons)
-                            .neededPermissions(new String[]{Manifest.permission.,Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION})
+                            .neededPermissions(new String[]{Manifest.permission.ACCESS_NETWORK_STATE,Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION})
                             .image(R.drawable.ic_delivery_truck)
                             .title("We provide best tools")
                             .description("ever")
