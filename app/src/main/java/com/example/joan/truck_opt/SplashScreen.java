@@ -6,9 +6,6 @@ import android.content.SharedPreferences;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-
-import static android.R.attr.delay;
 
 public class SplashScreen extends AppCompatActivity {
     private static final String TAG = "SplashActivity";
@@ -22,7 +19,7 @@ public class SplashScreen extends AppCompatActivity {
 
         final Intent i = new Intent(this, IntroActivity.class);
         final Intent l = new Intent(this, LoginActivity.class);
-        final Intent p = new Intent(this, MainActivity.class);
+        final Intent p = new Intent(this, MainActivityUser.class);
         sp = getSharedPreferences("APP2", Context.MODE_PRIVATE);
         editor = sp.edit();
         final Boolean firstuse = sp.getBoolean("firstuse",true);
