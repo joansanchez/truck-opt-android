@@ -18,7 +18,8 @@ public class MainActivityUser extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_main);
-        Intent i = new Intent(this,DeliveryDetails.class);
+        //TODO Fix
+        Intent i = new Intent(this, DeliveryDetails.class);
         startActivity(i);
 
     }

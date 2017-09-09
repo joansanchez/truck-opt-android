@@ -48,7 +48,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void api(String user, String contra) {
-        String url ="http://10.201.2.238:9000/api.php?email="+user+"&password="+contra;
+        String url ="http://ordinadorcasa.no-ip.org:9001/?email="+user+"&password="+contra;
         Log.v(TAG, url);
         RequestQueue queue = Volley.newRequestQueue(this);
 

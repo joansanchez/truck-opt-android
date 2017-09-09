@@ -92,7 +92,7 @@ public class LoginActivity extends AppCompatActivity {
         final Character[] valido = {'0'};
         final String email = _emailText.getText().toString();
         String password = _passwordText.getText().toString();
-        String url = "http://10.201.2.238:9001/?email=" + email + "&password=" + password;
+        String url = "http://ordinadorcasa.no-ip.org:9001/?email=" + email + "&password=" + password;
         Log.v(TAG, url);
         RequestQueue queue = Volley.newRequestQueue(this);
 
