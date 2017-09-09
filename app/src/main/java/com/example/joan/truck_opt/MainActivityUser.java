@@ -6,24 +6,33 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.Arrays;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 
 public class MainActivityUser extends ActionBarActivity {
-
+    PacketListAdapter packetListAdapter;
+    ListView packetList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_main);
-        //TODO Fix
-        Intent i = new Intent(this, DeliveryDetails.class);
-        startActivity(i);
-
+        setContentView(R.layout.activity_main);
+        packetList = (ListView) findViewById(R.id.packet_list);
+        packetListAdapter = new PacketListAdapter(this);
+        testData();
+        packetList.setAdapter(packetListAdapter);
     }
-
+    private void testData(){
+        for (int i = 0; i < 100; i=i+2) {
+            packetListAdapter.add(new Delivery(i, "Here", "Th3ere", Arrays.asList("A", "B")));
+            packetListAdapter.add(new Delivery(i+1, "Anotha one" + i, "Th3ere", Arrays.asList("A", "B")));
+        }
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
