@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+<TableLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TableRow>
+        <TextView
+            android:id="@+id/source"
+            android:layout_width="167dp"
+            android:layout_height="wrap_content"
+            android:text="From" />
+        <TextView
+            android:layout_width="37dp"
+            android:layout_height="wrap_content"
+            android:text="->" />
+        <TextView
+            android:id="@+id/destiny"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="To"
+            android:layout_weight="1" />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="last noti"
+            android:id="@+id/notification"/>
+    </TableRow>
+</TableLayout>
+
+</LinearLayout>
