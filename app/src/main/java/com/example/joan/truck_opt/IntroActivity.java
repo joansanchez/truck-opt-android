@@ -1,6 +1,8 @@
 package com.example.joan.truck_opt;
 
 import android.Manifest;
+import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.FloatRange;
 import android.support.annotation.Nullable;
 import android.os.Bundle;
@@ -11,10 +13,15 @@ import agency.tango.materialintroscreen.MaterialIntroActivity;
 import agency.tango.materialintroscreen.MessageButtonBehaviour;
 import agency.tango.materialintroscreen.SlideFragmentBuilder;
 import agency.tango.materialintroscreen.animations.IViewTranslation;
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class IntroActivity extends MaterialIntroActivity {
 
     @Override
+        protected void attachBaseContext(Context newBase) {
+            super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+        }
         protected void onCreate(@Nullable Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             enableLastSlideAlphaExitTransition(true);
@@ -75,7 +82,8 @@ public class IntroActivity extends MaterialIntroActivity {
 
         @Override
         public void onFinish() {
-            super.onFinish();
-            Toast.makeText(this, "Try this library in your project! :)", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+            finish();
         }
 }

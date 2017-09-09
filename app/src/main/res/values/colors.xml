@@ -6,7 +6,7 @@
   <color name="first_slide_background">#0097A7</color>
   <color name="first_slide_buttons">#000000</color>
   <color name="first_slide_accent">#0097A7</color>
-  <color name="first_slide_text">#000000</color>
+  <color name="first_slide_text">#FFFFFF</color>
   <!--GeneratedSecondSlidePalette-->
   <color name="secondprimary">#673AB7</color>
   <color name="secondprimary_dark">#512DA8</color>
