@@ -6,7 +6,10 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
-    <application
+    <application>
+        <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyBvi_037hMcYAMXBnkdiM8ZcPoWtfNgbxo"/>
         android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,24 +23,28 @@
         <activity
             android:name=".LoginActivity"
             android:theme="@style/Theme.AppCompat.LoginActivity" />
-        <activity android:name=".MainActivityUser"/>
+        <activity android:name=".MainActivityUser"
+            android:theme="@style/Theme.AppCompat.LoginActivity"/>
         <activity
             android:name=".SignupActivity"
             android:theme="@style/Theme.AppCompat.LoginActivity" />
         <activity android:name=".login" />
-        <activity android:name=".SplashScreen">
+        <activity android:name=".SplashScreen"
+            android:theme="@style/Theme.AppCompat.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivityDriver" />
+        <activity android:name=".MainActivityDriver"
+            android:theme="@style/Theme.AppCompat.LoginActivity"/>
         <activity
             android:name=".Main3Activity"
             android:label="@string/title_activity_main3"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".DeliveryDetails"></activity>
+        <activity android:name=".DeliveryDetails"
+            android:theme="@style/Theme.AppCompat.LoginActivity"></activity>
     </application>
 
 </manifest>
