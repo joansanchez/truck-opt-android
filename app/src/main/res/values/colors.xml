@@ -15,7 +15,8 @@
   <color name="secondsecondary_text">#757575</color>
   <color name="secondicons">#FFFFFF</color>
   <color name="seconddivider">#BDBDBD</color>
-
+  <!--ColorCustomSlide-->
+  <color name="backgroundcolor">#4052b5</color>
 
   <!--login -->
   <color name="primary">#E43F3F</color>

@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import agency.tango.materialintroscreen.MaterialIntroActivity;
 import agency.tango.materialintroscreen.MessageButtonBehaviour;
+import agency.tango.materialintroscreen.SlideFragment;
 import agency.tango.materialintroscreen.SlideFragmentBuilder;
 import agency.tango.materialintroscreen.animations.IViewTranslation;
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
@@ -47,7 +48,7 @@ public class IntroActivity extends MaterialIntroActivity {
                     .buttonsColor(R.color.secondicons)
                     .image(R.drawable.introactivitysecondslide)
                     .title("Truck drivers welcome!")
-                    .description("App only available for professional truck drivers")
+                    .description("Get a maximum profit of your truck trips")
                     .build(),
                 new MessageButtonBehaviour(new View.OnClickListener() {
                     @Override
@@ -55,7 +56,7 @@ public class IntroActivity extends MaterialIntroActivity {
                         showMessage("Enter to our platform trucku.com");
                     }
                 }, "What if I want to send?"));
-
+            addSlide(new CustomSlide());
         
             addSlide(new SlideFragmentBuilder()
                             .backgroundColor(R.color.first_slide_background)
