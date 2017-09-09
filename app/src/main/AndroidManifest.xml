@@ -37,6 +37,7 @@
             android:name=".Main3Activity"
             android:label="@string/title_activity_main3"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".DeliveryDetails"></activity>
     </application>
 
 </manifest>
