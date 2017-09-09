@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-  <color name="primary">#fff</color>
   <!--IntroActivity-->
   <color name="first_slide_background">#0097A7</color>
   <color name="first_slide_buttons">#000000</color>
@@ -19,6 +18,7 @@
 
 
   <!--login -->
+  <color name="primary">#E43F3F</color>
   <color name="primary_dark">#E12929</color>
   <color name="primary_darker">#CC1D1D</color>
   <color name="accent">#FFFFFF</color>
