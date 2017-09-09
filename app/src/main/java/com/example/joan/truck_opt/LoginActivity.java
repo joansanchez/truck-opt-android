@@ -17,10 +17,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import butterknife.ButterKnife;
@@ -69,10 +73,10 @@ public class LoginActivity extends AppCompatActivity {
     public void login() {
         Log.d(TAG, "Login");
 
-        /*if (!validate()) {
+        if (!validate()) {
             onLoginFailed();
             return;
-        }*/
+        }
 
         _loginButton.setEnabled(false);
 
@@ -82,43 +86,60 @@ public class LoginActivity extends AppCompatActivity {
         progressDialog.setMessage("Authenticating...");
         progressDialog.show();
 
+        final Character[] valido = {'0'};
         String email = _emailText.getText().toString();
         String password = _passwordText.getText().toString();
-        Log.v(TAG, "arriba");
-        api(email, password);
+        String url = "http://10.201.2.238:9001/?email=" + email + "&password=" + password;
+        Log.v(TAG, url);
+        RequestQueue queue = Volley.newRequestQueue(this);
 
+        // Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        // Display the first 500 characters of the response string.
+                        try {
+                            JSONObject hola = new JSONObject(response);
+                            String nomtest = hola.getString("nom");
+                            Boolean driver = hola.getBoolean("driver");
+                            Log.v(TAG, "Response is: " + response);
+                            //onLoginSuccess();
+                            //progressDialog.dismiss();
+                            valido[0] = '1';
+                        } catch (JSONException e) {
+                            Log.v(TAG, "detecto el error");
+                            e.printStackTrace();
+                            valido[0] = '2';
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.v(TAG, "That didn't work!");
+                valido[0] = '2';
+            }
+        });
+        if (valido[0] == '2') Log.v(TAG, "el estado del bool es falso");
+        else if (valido[0] == '1')Log.v(TAG, "LOOOOOLL");
+// Add the request to the RequestQueue.
+        queue.add(stringRequest);
         // TODO: Implement your own authentication logic here.
 
         new android.os.Handler().postDelayed(
                 new Runnable() {
                     public void run() {
                         // On complete call either onLoginSuccess or onLoginFailed
-                        onLoginSuccess();
-                        // onLoginFailed();
+                        if(valido[0]=='1') onLoginSuccess();
+                        else onLoginFailed();
                         progressDialog.dismiss();
                     }
                 }, 3000);
+
     }
 
-    private void api(String email, String password){
-        String url ="http://10.201.2.238:9000/api.php?email="+email+"&password="+password;
-        Log.v(TAG, url);
-        JsonObjectRequest jsObjRequest = new JsonObjectRequest
-                (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
 
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Log.v(TAG, "Response: " + response.toString());
-                    }
-                }, new Response.ErrorListener() {
-
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        // TODO Auto-generated method stub
-                        Log.v(TAG, "error api");
-                    }
-                });
-    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_SIGNUP) {
@@ -139,6 +160,8 @@ public class LoginActivity extends AppCompatActivity {
 
     public void onLoginSuccess() {
         _loginButton.setEnabled(true);
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
         finish();
     }
 
@@ -153,20 +176,8 @@ public class LoginActivity extends AppCompatActivity {
 
         String email = _emailText.getText().toString();
         String password = _passwordText.getText().toString();
+        if (email.isEmpty() || password.isEmpty()) valid = false;
 
-        if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            _emailText.setError("enter a valid email address");
-            valid = false;
-        } else {
-            _emailText.setError(null);
-        }
-
-        if (password.isEmpty() || password.length() < 4 || password.length() > 10) {
-            _passwordText.setError("between 4 and 10 alphanumeric characters");
-            valid = false;
-        } else {
-            _passwordText.setError(null);
-        }
 
         return valid;
     }

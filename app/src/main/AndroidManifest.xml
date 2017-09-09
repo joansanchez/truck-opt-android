@@ -12,19 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name=".App">
-        <activity android:name=".IntroActivity"
-            android:theme="@style/Theme.AppCompat.IntroActivity">
+        <activity android:name=".IntroActivity" android:theme="@style/Theme.AppCompat.IntroActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" android:theme="@style/Theme.AppCompat.LoginActivity" android:noHistory="true">
+        <activity android:name=".LoginActivity" android:theme="@style/Theme.AppCompat.LoginActivity">
         </activity>
         <activity android:name=".MainActivity" >
         </activity>
         <activity android:name=".SignupActivity" android:theme="@style/Theme.AppCompat.LoginActivity"></activity>
+        <activity android:name=".login">
+        </activity>
     </application>
 
 </manifest>
