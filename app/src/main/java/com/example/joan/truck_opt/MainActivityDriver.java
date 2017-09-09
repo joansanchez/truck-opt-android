@@ -26,7 +26,7 @@ public class MainActivityDriver extends AppCompatActivity {
     private RouteListAdapter routeListAdapter;
     private ListView routeList;
     private RequestQueue requestQueue;
-    private final String BASE_URL = "";
+    private final String BASE_URL = "http://ordinadorcasa.no-ip.org";
     SharedPreferences sp;
     SharedPreferences.Editor editor;
 
@@ -48,7 +48,7 @@ public class MainActivityDriver extends AppCompatActivity {
         //TODO Enter parameters
         String email = sp.getString("password", "");
         String password = sp.getString("currentUser", "");
-        return BASE_URL + "?email=" + email + "&password=" + password + "&cmd=mostrarRutas";
+        return BASE_URL + "/?email=" + email + "&password=" + password + "&cmd=mostrarRutas";
     }
 
     protected void refreshData() {
