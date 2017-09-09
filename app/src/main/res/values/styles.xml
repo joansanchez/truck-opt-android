@@ -4,7 +4,8 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="AppTheme.Dark" parent="Theme.AppCompat.NoActionBar">
+
+    <style name="AppTheme.Dark">
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primary_dark</item>
         <item name="colorAccent">@color/accent</item>
@@ -33,7 +34,25 @@
         <item name="android:textColor">@color/first_slide_text</item>
     </style>
 
-    <style name="Theme.AppCompat.LoginActivity" parent="Theme.AppCompat.NoActionBar">
+    <style name="Theme.AppCompat.LoginActivity" parent="Theme.AppCompat.NoActionBar" >
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="fontPath">fonts/roboto.tff</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+
+        <item name="android:windowBackground">@color/primary</item>
+
+        <item name="colorControlNormal">@color/iron</item>
+        <item name="colorControlActivated">@color/white</item>
+        <item name="colorControlHighlight">@color/white</item>
+        <item name="android:textColorHint">@color/iron</item>
+
+        <item name="colorButtonNormal">@color/primary_darker</item>
+        <item name="android:colorButtonNormal">@color/primary_darker</item>
+    </style>
+    <style name="Theme.AppCompat.UniversalActivity" >
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
         <item name="fontPath">fonts/roboto.tff</item>

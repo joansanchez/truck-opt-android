@@ -6,10 +6,8 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
-    <application>
-        <meta-data
-        android:name="com.google.android.geo.API_KEY"
-        android:value="AIzaSyBvi_037hMcYAMXBnkdiM8ZcPoWtfNgbxo"/>
+
+    <application
         android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -24,13 +22,13 @@
             android:name=".LoginActivity"
             android:theme="@style/Theme.AppCompat.LoginActivity" />
         <activity android:name=".MainActivityUser"
-            android:theme="@style/Theme.AppCompat.LoginActivity"/>
+            android:theme="@style/Theme.AppCompat.UniversalActivity"/>
         <activity
             android:name=".SignupActivity"
             android:theme="@style/Theme.AppCompat.LoginActivity" />
         <activity android:name=".login" />
         <activity android:name=".SplashScreen"
-            android:theme="@style/Theme.AppCompat.LoginActivity">
+            android:theme="@style/Theme.AppCompat.IntroActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,13 +36,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivityDriver"
-            android:theme="@style/Theme.AppCompat.LoginActivity"/>
+            android:theme="@style/Theme.AppCompat.UniversalActivity"/>
         <activity
             android:name=".Main3Activity"
             android:label="@string/title_activity_main3"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".DeliveryDetails"
-            android:theme="@style/Theme.AppCompat.LoginActivity"></activity>
+            android:theme="@style/Theme.AppCompat.UniversalActivity"></activity>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBvi_037hMcYAMXBnkdiM8ZcPoWtfNgbxo"/>
     </application>
 
 </manifest>
