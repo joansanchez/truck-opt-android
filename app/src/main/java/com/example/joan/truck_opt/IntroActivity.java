@@ -49,35 +49,30 @@ public class IntroActivity extends MaterialIntroActivity {
                     .image(R.drawable.introactivitysecondslide)
                     .title("Truck drivers welcome!")
                     .description("Get a maximum profit of your truck trips")
-                    .build(),
-                new MessageButtonBehaviour(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        showMessage("Enter to our platform trucku.com");
-                    }
-                }, "What if I want to send?"));
-            addSlide(new CustomSlide());
+                    .build());
         
             addSlide(new SlideFragmentBuilder()
-                            .backgroundColor(R.color.first_slide_background)
-                            .buttonsColor(R.color.first_slide_buttons)
+                            .backgroundColor(R.color.dollarback)
+                            .buttonsColor(R.color.dollarbuttons)
                             .neededPermissions(new String[]{Manifest.permission.INTERNET,Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION})
-                            .image(R.drawable.ic_delivery_truck)
-                            .title("We provide best tools")
-                            .description("ever")
-                            .build(),
-                    new MessageButtonBehaviour(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            showMessage("Try us!");
-                        }
-                    }, "Tools"));
+                            .image(R.drawable.introactivitydollar)
+                            .title("Do you want to send something?")
+                            .description("Get the best fares")
+                            .build());
+            addSlide(new SlideFragmentBuilder()
+                    .backgroundColor(R.color.customback)
+                    .buttonsColor(R.color.custombuttons)
+                    .image(R.drawable.customslide2)
+                    .title("Eco-Friendly")
+                    .description("You can reduce the CO2 footprint, never a truck runs empty!")
+                    .build());
+            addSlide(new CustomSlide());
 
             addSlide(new SlideFragmentBuilder()
                     .backgroundColor(R.color.first_slide_background)
                     .buttonsColor(R.color.first_slide_buttons)
-                    .title("That's it")
-                    .description("Would you join us?")
+                    .title("Cool!")
+                    .description("You're ready to use it, you will see it's so easy!")
                     .build());
         }
 

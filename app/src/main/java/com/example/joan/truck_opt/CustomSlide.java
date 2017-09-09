@@ -3,6 +3,7 @@ package com.example.joan.truck_opt;
 /**
  * Created by polvallsortiz on 9/09/17.
  */
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 
 import agency.tango.materialintroscreen.SlideFragment;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class CustomSlide extends SlideFragment {
     private CheckBox checkBox;
@@ -30,7 +32,7 @@ public class CustomSlide extends SlideFragment {
 
     @Override
     public int buttonsColor() {
-        return R.color.white;
+        return R.color.greycool;
     }
 
     @Override

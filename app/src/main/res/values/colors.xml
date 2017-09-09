@@ -13,10 +13,16 @@
   <color name="secondaccent">#536DFE</color>
   <color name="secondprimary_text">#212121</color>
   <color name="secondsecondary_text">#757575</color>
-  <color name="secondicons">#FFFFFF</color>
+  <color name="secondicons">#000000</color>
   <color name="seconddivider">#BDBDBD</color>
   <!--ColorCustomSlide-->
   <color name="backgroundcolor">#4052b5</color>
+  <!--DollarIntro-->
+  <color name="dollarback">#009587</color>
+  <color name="dollarbuttons">#004038</color>
+  <!--Custom2-->
+  <color name="customback">#4CAF50</color>
+  <color name="custombuttons">#212121</color>
 
   <!--login -->
   <color name="primary">#E43F3F</color>
@@ -33,5 +39,6 @@
   <color name="base">#AAAAAA</color>
   <color name="iron">#CCCCCC</color>
   <color name="white">#FFFFFF</color>
+  <color name="greycool">#004038</color>
 
 </resources>

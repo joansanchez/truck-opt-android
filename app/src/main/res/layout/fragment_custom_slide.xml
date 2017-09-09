@@ -26,7 +26,7 @@
         android:layout_margin="5dp"
         android:layout_gravity="center_horizontal"
         android:id="@+id/checkbox"
-        android:text="I accept the terms and conditions of use of UTruck"/>
+        android:text="I accept the terms and conditions of use of TruckU"/>
 
 
 </LinearLayout>
