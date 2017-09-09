@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -39,7 +40,7 @@ public class MainActivityUser extends ActionBarActivity implements View.OnClickL
     SharedPreferences sp;
     private static final String TAG = "MainActivityUser";
     SharedPreferences.Editor editor;
-    Button btn;
+    FloatingActionButton btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +50,7 @@ public class MainActivityUser extends ActionBarActivity implements View.OnClickL
         packetListAdapter = new PacketListAdapter(this);
         sp = getSharedPreferences("APP2", Context.MODE_PRIVATE);
         editor = sp.edit();
-        btn = (Button) findViewById(R.id.addone);
+        btn = (FloatingActionButton) findViewById(R.id.addone);
         btn.setOnClickListener(this);
         testData();
     }

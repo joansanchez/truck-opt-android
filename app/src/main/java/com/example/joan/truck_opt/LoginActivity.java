@@ -31,7 +31,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
     private static final int REQUEST_SIGNUP = 0;
-
+    Boolean driver;
     //Shared preferences
     SharedPreferences sp;
     SharedPreferences.Editor editor;
@@ -112,7 +112,7 @@ public class LoginActivity extends AppCompatActivity {
                             editor.putString("telefon", telefon);
                             String direccion = userdownloaded.getString("direccion");
                             editor.putString("direccion", direccion);
-                            Boolean driver = userdownloaded.getBoolean("driver");
+                            driver = userdownloaded.getBoolean("driver");
                             editor.putBoolean("driver", driver);
                             editor.putString("currentUser", email);
                             editor.putString("password", password);
@@ -176,7 +176,9 @@ public class LoginActivity extends AppCompatActivity {
 
     public void onLoginSuccess() {
         _loginButton.setEnabled(true);
-        Intent intent = new Intent(this, MainActivityUser.class);
+        Intent intent;
+        if (driver) intent = new Intent(this, MainActivityDriver.class);
+            else intent = new Intent(this, MainActivityUser.class);
         startActivity(intent);
         finish();
     }
