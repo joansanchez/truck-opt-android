@@ -73,6 +73,8 @@ public class LoginActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
             }
         });
+        sp = getSharedPreferences("APP2", Context.MODE_PRIVATE);
+        editor = sp.edit();
     }
 
     public void login() {
@@ -92,7 +94,7 @@ public class LoginActivity extends AppCompatActivity {
         progressDialog.show();
 
         final Character[] valido = {'0'};
-        String email = _emailText.getText().toString();
+        final String email = _emailText.getText().toString();
         String password = _passwordText.getText().toString();
         String url = "http://10.201.2.238:9001/?email=" + email + "&password=" + password;
         Log.v(TAG, url);
@@ -105,9 +107,20 @@ public class LoginActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         // Display the first 500 characters of the response string.
                         try {
-                            JSONObject hola = new JSONObject(response);
-                            String nomtest = hola.getString("nom");
-                            Boolean driver = hola.getBoolean("driver");
+                            JSONObject userdownloaded = new JSONObject(response);
+                            String nomuser = userdownloaded.getString("nom");
+                            editor.putString("nomuser", nomuser);
+                            String cognomuser = userdownloaded.getString("cognom");
+                            editor.putString("cognomuser", cognomuser);
+                            String telefon = userdownloaded.getString("telf");
+                            editor.putString("telefon", telefon);
+                            String direccion = userdownloaded.getString("direccion");
+                            editor.putString("direccion", direccion);
+                            Boolean driver = userdownloaded.getBoolean("driver");
+                            editor.putBoolean("driver", driver);
+                            editor.putString("currentUser", email);
+                            editor.apply();
+
                             Log.v(TAG, "Response is: " + response);
                             //onLoginSuccess();
                             //progressDialog.dismiss();
@@ -140,7 +153,7 @@ public class LoginActivity extends AppCompatActivity {
                         else onLoginFailed();
                         progressDialog.dismiss();
                     }
-                }, 3000);
+                }, 2000);
 
     }
 
