@@ -91,7 +91,7 @@ public class LoginActivity extends AppCompatActivity {
 
         final Character[] valido = {'0'};
         final String email = _emailText.getText().toString();
-        String password = _passwordText.getText().toString();
+        final String password = _passwordText.getText().toString();
         String url = "http://ordinadorcasa.no-ip.org:9001/?email=" + email + "&password=" + password;
         Log.v(TAG, url);
         RequestQueue queue = Volley.newRequestQueue(this);
@@ -115,6 +115,8 @@ public class LoginActivity extends AppCompatActivity {
                             Boolean driver = userdownloaded.getBoolean("driver");
                             editor.putBoolean("driver", driver);
                             editor.putString("currentUser", email);
+                            editor.putString("password", password);
+                            Log.v(TAG, "pass "+password);
                             editor.apply();
 
                             Log.v(TAG, "Response is: " + response);
