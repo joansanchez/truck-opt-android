@@ -16,7 +16,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".IntroActivity"
-            android:theme="@style/Theme.AppCompat.IntroActivity"></activity>
+            android:theme="@style/Theme.AppCompat.IntroActivity" />
         <activity
             android:name=".LoginActivity"
             android:theme="@style/Theme.AppCompat.LoginActivity" />
@@ -32,7 +32,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivityDriver"></activity>
+        <activity android:name=".MainActivityDriver" />
+        <activity
+            android:name=".Main3Activity"
+            android:label="@string/title_activity_main3"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
