@@ -26,6 +26,7 @@ dependencies {
     })
     compile 'uk.co.chrisjenx:calligraphy:2.3.0'
     compile 'agency.tango.android:material-intro-screen:0.0.5'
+    compile 'com.google.android.gms:play-services-places:9.4.0'
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha9'
     compile 'com.jakewharton:butterknife:7.0.1'
