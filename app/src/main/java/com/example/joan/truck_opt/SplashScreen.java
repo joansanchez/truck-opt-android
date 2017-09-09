@@ -5,33 +5,35 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 public class SplashScreen extends AppCompatActivity {
+    private static final String TAG = "SplashActivity";
+    SharedPreferences sp;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-
-
         final Intent i = new Intent(this, IntroActivity.class);
         final Intent l = new Intent(this, LoginActivity.class);
         final Intent p = new Intent(this, MainActivity.class);
-        SharedPreferences sp;
-        SharedPreferences.Editor editor;
-        sp = getSharedPreferences("APP", Context.MODE_PRIVATE);
+        sp = getSharedPreferences("APP2", Context.MODE_PRIVATE);
         editor = sp.edit();
         Boolean firstuse = sp.getBoolean("firstuse",true);
-        String actual = sp.getString("currentUser","");
+        String actual = sp.getString("currentUser",null);
         if (firstuse) {
             editor.putBoolean("firstuse", false);
+            editor.apply();
             startActivity(i);
         }
         else {
-            if (actual.length() != 0){
+            if (sp.getString("currentUser", "").length() != 0) startActivity(p);
+            else{
                 startActivity(l);
             }
-            else startActivity(p);
+
         }
     }
 }
