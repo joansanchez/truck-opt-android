@@ -1,13 +1,10 @@
 package com.example.joan.truck_opt;
 
-import android.app.DownloadManager;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.ProgressDialog;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import android.content.Intent;
@@ -21,7 +18,6 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -172,13 +168,13 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        // Disable going back to the MainActivity
+        // Disable going back to the MainActivityUser
         moveTaskToBack(true);
     }
 
     public void onLoginSuccess() {
         _loginButton.setEnabled(true);
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, MainActivityUser.class);
         startActivity(intent);
         finish();
     }

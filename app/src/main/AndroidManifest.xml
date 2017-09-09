@@ -16,16 +16,15 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".IntroActivity"
-            android:theme="@style/Theme.AppCompat.IntroActivity">
-        </activity>
+            android:theme="@style/Theme.AppCompat.IntroActivity"></activity>
         <activity
             android:name=".LoginActivity"
-            android:theme="@style/Theme.AppCompat.LoginActivity"></activity>
-        <activity android:name=".MainActivity"></activity>
+            android:theme="@style/Theme.AppCompat.LoginActivity" />
+        <activity android:name=".MainActivityUser" />
         <activity
             android:name=".SignupActivity"
             android:theme="@style/Theme.AppCompat.LoginActivity" />
-        <activity android:name=".login"></activity>
+        <activity android:name=".login" />
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,6 +32,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivityDriver"></activity>
     </application>
 
 </manifest>

@@ -12,7 +12,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivityUser extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
